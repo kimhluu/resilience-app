@@ -136,7 +136,7 @@ const MissionsPage = () => {
         <Switch>
           <AppRoute path={routes.organizer.dashboard.missions} component={DashboardMissions} />
           <AppRoute path={routes.organizer.dashboard.home} component={Overview} />
-          <AppRoute path={routes.organizer.dashboard.volunteers} component={DashboardMissions} />
+          <AppRoute path={routes.organizer.dashboard.volunteers} component={DashboardVolunteers} />
         </Switch>
       </main>
     </div>

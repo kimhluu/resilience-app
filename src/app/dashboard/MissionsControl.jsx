@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
 import HomeIcon from "@material-ui/icons/Home";
 import PeopleIcon from "@material-ui/icons/People";
+import PanToolIcon from "@material-ui/icons/PanTool";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import ExitToApp from "@material-ui/icons/ExitToApp";
 
@@ -15,6 +16,7 @@ import Appbar from "./Appbar";
 import Drawer from "./Drawer";
 import Overview from "./Home";
 import DashboardMissions from "./Missions";
+import DashboardVolunteers from "./Volunteers/Volunteers";
 import { useOrganization } from "../model/Organization";
 import { routes, AppRoute } from "../routing";
 
@@ -97,12 +99,12 @@ const MissionsPage = () => {
       route: routes.volunteer.dashboard.home,
       icon: <PeopleIcon />,
     },
-    // {
-    //   text: "Volunteers",
-    //   id: routes.organizer.dashboard.volunteers,
-    //   route: routes.organizer.dashboard.volunteers,
-    //   icon: <PanToolIcon />,
-    // },
+    {
+      text: "Volunteers",
+      id: routes.organizer.dashboard.volunteers,
+      route: routes.organizer.dashboard.volunteers,
+      icon: <PanToolIcon />,
+    },
     {
       text: "Logout",
       id: routes.logout,
@@ -116,7 +118,7 @@ const MissionsPage = () => {
       icon: <AssignmentIcon />,
     },
   ];
-
+  console.log(DashboardMissions);
   return (
     <div className={classes.root}>
       <Appbar open={open} handleDrawerOpen={handleDrawerOpen} />
@@ -134,6 +136,7 @@ const MissionsPage = () => {
         <Switch>
           <AppRoute path={routes.organizer.dashboard.missions} component={DashboardMissions} />
           <AppRoute path={routes.organizer.dashboard.home} component={Overview} />
+          <AppRoute path={routes.organizer.dashboard.volunteers} component={DashboardMissions} />
         </Switch>
       </main>
     </div>
